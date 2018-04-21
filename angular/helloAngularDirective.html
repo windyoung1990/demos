@@ -1,0 +1,21 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div ng-controller="HelloAngular">
+           <hello></hello>
+        </div>
+        <script src="./lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.directive('hello', function() {
+                return {
+                    restrict: 'E',
+                    template: '<div>hello angular</div>',
+                    replace: true
+                };
+            })
+        </script>
+    </body>
+</html>

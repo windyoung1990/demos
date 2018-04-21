@@ -1,0 +1,31 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div class="show-scope-demo">
+            <div ng-controller="GreetCtrl">
+                hello, {{name}}
+            </div>
+            <div ng-controller="ListCtrl">
+                <ol>
+                    <li ng-repeat="name in names">
+                        {{name}} from {{department}}
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <script src="./lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.controller('GreetCtrl',function($scope,$rootScope) {
+                $scope.name = 'World';
+                $rootScope.department = 'Angular';
+                // console.log(angular.element($0).scope());
+            });
+            myModule.controller('ListCtrl', function($scope) {
+                $scope.names = ['Jack', 'David', 'Rose'];
+            })
+        </script>
+    </body>  
+</html>

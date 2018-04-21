@@ -1,0 +1,31 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+        </style>
+    </head>
+    <body>
+        <div ng-controller="NgShow">
+           <div ng-show="show">
+               <ol>
+                   <li ng-repeat="name in names">
+                       {{name}}
+                   </li>
+               </ol>
+           </div>
+           <button class="btn btn-default" ng-click="toggle()">
+               切换
+           </button>
+        </div>
+        <script src="./lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.controller('NgShow', function($scope) {
+                $scope.names = ['Jack', 'Jane', 'Joy'] 
+                $scope.show = true;
+                $scope.toggle = function() {
+                    $scope.show = !$scope.show;
+                }
+            });
+        </script>
+    </body>  
+</html>

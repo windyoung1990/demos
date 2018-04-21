@@ -1,0 +1,31 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            .text-blue{
+                color: blue;
+            }
+            .error{
+                color: red;
+            }
+            .waring{
+                color: peru;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="NgClass">
+            <p class="text-{{color}}">text-color</p>
+            <p ng-class="{error: isError, waring: isWarning}">ng-class</p>
+        </div>
+        <script src="./lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.controller('NgClass', function($scope) {
+                $scope.color = "blue";
+                $scope.isError = true;
+                $scope.isWarning = false;
+            });
+        </script>
+    </body>  
+</html>

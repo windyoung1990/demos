@@ -1,0 +1,80 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="panel-primary panel">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    双向数据绑定
+                </div>
+            </div>     
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-horizontal" role="form" ng-controller="UserInfoCtrl">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    邮箱：
+                                </label>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control" placeholder="请输入邮箱" ng-model="userInfo.email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    密码：
+                                </label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control" placeholder="只能是数字" ng-model="userInfo.pwd">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-md-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="userInfo.autoLogin">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-md-10">
+                                    <button class="btn btn-default" ng-click="getFormData()">
+                                        获取表单的值
+                                    </button>
+                                    <button class="btn btn-default" ng-click="setFormData()">
+                                            设置表单的值
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.controller('UserInfoCtrl',function($scope) {
+                $scope.userInfo = {
+                    email: '12323@qq.com',
+                    pwd: '32323',
+                    autoLogin: true
+                };
+                $scope.getFormData = function() {
+                    console.log($scope.userInfo);
+                }
+                $scope.setFormData = function() {
+                    $scope.userInfo = {
+                        email: '12323@126.com',
+                        pwd: '333',
+                        autoLogin: false
+                    };
+                }
+            })
+        </script>
+    </body>  
+</html>
