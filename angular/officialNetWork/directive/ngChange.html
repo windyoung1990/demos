@@ -1,0 +1,24 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngBlur</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <input type="checkbox" ng-model="confirmd" ng-change="change()" id="change1">
+            <input type="checkbox" ng-model="confirmd"  id="change2">
+            <label for="change2">Confirmd</label>
+            <tt>counter = {{counter}}</tt>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                $scope.counter = 0;
+                $scope.change = function() {
+                    $scope.counter ++;
+                }
+            });
+        </script>
+    </body>
+</html>

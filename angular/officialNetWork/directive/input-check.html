@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+</head>
+<body>
+    <div ng-controller="CheckboxCtrl">
+        <form name="myName">
+            value1: <input type="checkbox" ng-model="checkboxModel.value1">
+            value2: <input type="checkbox" ng-model="checkboxModel.value2" ng-true-value="'YES'" ng-false-value="'NO'">
+        </form>
+        <tt>value1 = {{checkboxModel.value1}}</tt>
+        <tt>value2 = {{checkboxModel.value2}}</tt>
+    </div>
+    <script src="../angular.js"></script>
+    <script>
+        // tips ng-true-value 值为字符串
+        angular.module('demo',[])
+        .controller('CheckboxCtrl',function($scope) {
+            $scope.checkboxModel = {
+                value1: true,
+                value2: 'YES'
+            }
+        })
+    </script>
+</body>
+</html>

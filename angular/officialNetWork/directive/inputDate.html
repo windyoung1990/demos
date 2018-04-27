@@ -1,0 +1,23 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>inputDate</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl as dateCtrl">
+            <form name="myForm">
+                pick a date in 2018
+                <input type="date" name="input" id="dateInput" ng-model="example.value" placeholder="yyyy-MM-dd" min="2018-01-01" max="2018-12-31" required>
+                <span class="error" ng-show="myForm.input.$error.required">required</span>
+                <span class="error" ng-show="myForm.input.$error.date">not a valid date!</span>
+            </form>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

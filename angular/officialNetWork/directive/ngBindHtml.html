@@ -1,0 +1,24 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngBindHtml</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <p ng-bind-html="myHtml"></p>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope, $sce) {
+                // 直接使用会报错
+                // $scope.myHtml = 'I am an <code>HTML</code>string with ' +
+                // '<a href="#">links!</a> and other <em>stuff</em>';
+                $scope.myHtml = $sce.trustAsHtml(
+                    'I am an <code>HTML</code>string with ' +
+                '<a href="#">links!</a> and other <em>stuff</em>'
+                );
+            });
+        </script>
+    </body>
+</html>

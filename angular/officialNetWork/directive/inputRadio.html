@@ -1,0 +1,29 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>inputRadio</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <form name="myForm"> 
+                <input type="radio" ng-model="color.name" value="red"> Red <br>
+                <input type="radio" ng-model="color.name" ng-value="specialValue"> Green <br>
+                <input type="radio" ng-model="color.name" value="blue"> Blue <br>
+                <tt>{{color.name}}</tt>
+            </form>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                $scope.color = {
+                    name: "blue"
+                };
+                $scope.specialValue = {
+                    id: "21232",
+                    value: "green"
+                }
+            });
+        </script>
+    </body>
+</html>

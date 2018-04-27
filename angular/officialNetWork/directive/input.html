@@ -1,0 +1,37 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8">
+        <title>input</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleControler">
+            <form name="myForm">
+                User name: <input type="text" name="userName" ng-model="user.name" required>
+                <span class="error" ng-show="myForm.userName.$error.required">Required</span><br>
+                Last name: <input type="text" name="lastName" ng-model="user.last" ng-minlength="3" ng-maxlength="10">
+                <span class="error" ng-show="myForm.lastName.$error.minLength">Too short!</span>
+                <span class="error" ng-show="myForm.lastName.$error.maxLength">Too long!</span>
+            </form>
+            <hr>
+            <tt>user = {{user}}</tt>
+            <tt>myForm.userName.$valid = {{myForm.userName.$valid}}</tt><br>
+            <tt>myForm.userName.$error = {{myForm.userName.$error}}</tt><br>
+            <tt>myForm.lastName.$valid = {{myForm.lastName.$valid}}</tt><br>
+            <tt>myForm.lastName.$error = {{myForm.lastName.$error}}</tt><br>
+            <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+            <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+            <tt>myForm.$error.minlength = {{!!myForm.$error.minlength}}</tt><br>
+            <tt>myForm.$error.maxlength = {{!!myForm.$error.maxlength}}</tt><br>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleControler', function($scope) {
+                $scope.user = {
+                    name: 'guest',
+                    last: 'visitor'
+                }
+            })
+        </script>
+    </body>
+</html>

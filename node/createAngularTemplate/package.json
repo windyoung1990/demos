@@ -1,0 +1,17 @@
+{
+  "name": "createangulartemplate",
+  "version": "1.0.0",
+  "description": "a tool to help create html template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "angulart": "./bin/index.js"
+  },
+  "author": "zhangjianfeng05",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.15.1"
+  }
+}

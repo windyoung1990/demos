@@ -1,0 +1,21 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngBindTemplate</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            Salutation: <input type="text" ng-model="salutation">
+            Name: <input type="text" ng-model="name">
+            <pre ng-bind-template="{{salutation}} {{name}}"></pre>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                $scope.salutation = 'Hello';
+                $scope.name = 'World';
+            });
+        </script>
+    </body>
+</html>

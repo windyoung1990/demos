@@ -1,0 +1,29 @@
+<html ng-app="myModule">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div ng-controller="DirectiveScope">
+            <p>父scope: <input type="text" ng-model="input"></p>
+            <my-directive my-text="input"></my-directive>
+        </div>
+        <script src="../lib/angular.js"></script>
+        <script>
+            var myModule = angular.module('myModule',[]);
+            myModule.controller('DirectiveScope', function($scope) {
+            
+            });
+            myModule.directive('myDirective', function() {
+                return {
+                    restrict: 'E',
+                    replace: true,
+                    template: '<p>自定义指令：<input type="text" ng-model="myText" /></p>',
+                    scope: {
+                        myText: '='
+                    },
+                    controller: null
+                }
+            })
+        </script>
+    </body>
+</html>

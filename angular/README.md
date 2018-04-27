@@ -22,5 +22,27 @@
 * scope可以传播事件
 * scope不仅是MVC的基础，也是实现双向数据绑定的基础
 
-##
+## directive 指令
+### 指令-scope
+* false（默认值）：直接使用父scope,且父子间model会互相改变。比较“危险”
+* true：继承父scope,但是子scope改变，不影响父scope
+* { }：创建一个新的“隔离”scope，但仍可与父scope通信
+1. @：单向绑定，外部scope能够影响内部scope，但反过来不成立
+2. =：双向绑定，外部scope和内部scope的model能够相互改变
+3. &：把内部scope的函数的返回值和外部scope的任何属性绑定起来
+### 指令-require
+* require - 请求另外的controller，传入当前directive的link function中。require需要传入一个directive controller的名称。如果找不到这个名称对应的controller，那么将会抛出一个error。名称可以加入以下前缀：
+
+1. ? - 不要抛出异常。这使这个依赖变为一个可选项。
+2. ^ - 允许查找父元素的controller
+
+### 指令-compile
+如果需要给Directive自定义事件或用程序生成模板，就需要用到compile和link函数了。基于性能的考虑，Angular中，模板的处理过程分为compile和link两个阶段，Directive也会在这两个阶段分别进行处理。
+* compile阶段：compile阶段主要是对模板内容的处理，可以对模板内容进行修改，如ng-repeat就是在compile阶段执行的。
+* link阶段：link阶段主要对模板进行数据绑定和事件绑定等操作。
+
+
+
+
+
 

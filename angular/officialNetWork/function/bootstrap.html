@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>bootstrap</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div ng-controller="WelcomeControler">
+            {{greeting}}
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            var app = angular.module('demo', []);
+            app.controller('WelcomeControler', function($scope) {
+                $scope.greeting = 'Welcome';
+            });
+            // 类似在html绑定了  ng-app="demo";
+            angular.bootstrap(document, ['demo']);
+        </script>
+    </body>
+</html>

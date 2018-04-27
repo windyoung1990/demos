@@ -1,0 +1,44 @@
+<html ng-app="form">
+    <head>
+        <title>form</title>
+        <meta charset="ut-8" />
+        <style>
+            /*
+            CSS classes
+            ng-valid is set if the form is valid.
+            ng-invalid is set if the form is invalid.
+            ng-pristine is set if the form is pristine.
+            ng-dirty is set if the form is dirty.
+            ng-submitted is set if the form was submitted. 
+            */
+            .my-form {
+                -webkit-transition:all linear 0.5s;
+                transition:all linear 0.5s;
+                background: transparent;
+
+            }
+            .my-form.ng-invalid{
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm" ng-controller="FormController" class="my-form">
+            userType: <input name="input" ng-model="userType" required><br>
+            <span class="error" ng-show="myForm.input.$error.require">Required</span>
+            <code>userType = {{userType}}</code> <br>
+            <code>myForm.input.$valid = {{myForm.input.$valid}}</code><br>
+            <code>myForm.input.$error = {{myForm.input.$error}}</code><br>
+            <code>myForm.$valid = {{myForm.$valid}}</code><br>
+            <code>myForm.$error.required = {{!!myForm.$error.required}}</code><br>
+            <code>myForm.$dirty = {{!!myForm.$dirty}}</code>
+        </form>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('form',[])
+            .controller('FormController', function($scope) {
+                $scope.userType = "guest"
+            });
+        </script>
+    </body>
+</html>

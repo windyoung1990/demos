@@ -1,0 +1,19 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngCheck</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            Check me to check both: <input type="checkbox" ng-model="checkMaster">
+            <input type="checkbox" ng-checked="checkMaster">
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>
