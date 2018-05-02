@@ -1,0 +1,26 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngHide</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            Click me: <input type="checkbox" ng-model="checked">
+            Show:
+            <div ng-show="checked">
+                <span class="glyphicon glyphicon-thumbs-up"></span> I show up when your checkbox is checked.
+            </div>
+            Hide:
+            <div ng-hide="checked">
+                <span class="glyphicon glyphicon-thumbs-down"></span> I hide when your checkbox is checked.
+            </div>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

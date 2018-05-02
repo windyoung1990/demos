@@ -1,0 +1,25 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngKeyUp</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <input type="text" ng-keyup="count = count + 1" ng-init="count=0">keyUp count:{{count}}
+            <!-- <input ng-keyup="count = count + 1" ng-init="count=0"> key up count: {{count}} -->
+
+
+            <p>Typing in the input box below updates the keycode</p>
+            <input type="text" ng-keyup="eventA = $event">
+            <p>event code:{{eventA.keyCode}}</p>
+            <p>event altKeyL{{eventA.altKey}}</p>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

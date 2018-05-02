@@ -1,0 +1,32 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngClassEven</title>
+        <style>
+        .odd {
+            color: red;
+        }
+        .even {
+        color: blue;
+        }   
+        </style>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <ol ng-init="names=['Jhon', 'Mary', 'Cate', 'Suz']">
+                <li ng-repeat="name in names">
+                    <span ng-class-odd="'odd'" ng-class-even="'even'">
+                        {{name}}
+                    </span>
+                </li>
+            </ol>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngDisabled</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <input type="checkbox" ng-model="checked">
+            <button ng-disabled="checked">Disabled</button>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

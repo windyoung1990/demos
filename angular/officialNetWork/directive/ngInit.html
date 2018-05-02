@@ -1,0 +1,25 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngInit</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <div ng-repeat="innerList in list" ng-init="outerIndex = $index">
+                <div ng-repeat="value in innerList" ng-init="innerIndex = $index">
+                    list[{{outerIndex}}][{{innerIndex}}] = {{value}}
+                </div>
+            </div>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                $scope.list = [
+                    ['a', 'b'],
+                    ['c', 'd']
+                ];
+            });
+        </script>
+    </body>
+</html>

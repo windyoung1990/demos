@@ -1,0 +1,39 @@
+<html ng-app="demo" ng-csp="no-unsafe-eval">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngCsp</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl as ctrl">
+            <div>
+                <button id="inc" ng-click="ctrl.inc()">Increment</button>
+                <span id="counter">
+                    {{ctrl.counter}}
+                </span>
+            </div>
+            <div>
+                <button id="evil" ng-click="ctrl.evil()">Evil</button>
+                <span id="evilError">
+                    {{ctrl.evilError}}
+                </span>
+            </div>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                this.counter = 0;
+                this.inc = function() {
+                    this.counter ++;
+                };
+                this.evil = function() {
+                    try {
+                        eval('1+2');
+                    }catch (e){
+                        this.evilError = e.message;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

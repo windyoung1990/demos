@@ -1,0 +1,22 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngIf</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /><br/>
+            Show when checked:
+            <span ng-if="checked" class="animate-if">
+                This is removed when the checkbox is unchecked.
+            </span>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

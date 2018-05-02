@@ -1,0 +1,20 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngCopy</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <!-- 执行copy操作后，copied变为true -->
+            <input ng-copy="copied=true" ng-init="copied=false;value='copy me'" ng-model="value">
+            copied:{{copied}}
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

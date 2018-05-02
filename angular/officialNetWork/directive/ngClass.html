@@ -1,0 +1,32 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngClass</title>
+        <style>
+            .strike {
+            text-decoration: line-through;
+            }
+            .bold {
+                font-weight: bold;
+            }
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <p ng-class="{strike: deleted,bold: important,red: error}">Map Synctax Example</p>
+            <input type="checkbox" ng-model="deleted"> deleted (apply "strike" class)<br>
+            <input type="checkbox" ng-model="important"> important (apply "bold" class)<br>
+            <input type="checkbox" ng-model="error"> error (apply "red" class)
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

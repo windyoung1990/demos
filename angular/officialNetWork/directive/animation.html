@@ -1,0 +1,32 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>animation</title>
+        <style>
+            .base-class {
+                -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+                transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+            }
+
+            .base-class.my-class {
+                color: red;
+                font-size:3em;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
+            <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
+            <br>
+            <span class="base-class" ng-class="myVar">Sample Text</span>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

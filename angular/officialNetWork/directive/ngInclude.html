@@ -1,0 +1,35 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngInclude</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <select ng-model="template" ng-options="t.name for t in templates">
+                <option value="">(blank)</option>
+            </select>
+            url of the template: <code>{{template.url}}</code>
+            <hr>
+            <div>
+                <div ng-include="template.url"></div>
+            </div>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+                $scope.templates = [
+                    {
+                        name: 'template1.html',
+                        url: 'template1.html'
+                    },
+                    {
+                        name: 'template2.html',
+                        url: 'template2.html'
+                    }
+                ]
+                $scope.template = $scope.templates[1];
+            });
+        </script>
+    </body>
+</html>

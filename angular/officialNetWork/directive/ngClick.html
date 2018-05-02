@@ -1,0 +1,21 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngClick</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <button ng-click="count = count + 1" ng-init="count=0">
+            Increment
+            </button>
+            {{count}}
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>

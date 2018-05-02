@@ -41,6 +41,10 @@
 * compile阶段：compile阶段主要是对模板内容的处理，可以对模板内容进行修改，如ng-repeat就是在compile阶段执行的。
 * link阶段：link阶段主要对模板进行数据绑定和事件绑定等操作。
 
+### 父作用域与子作用域响应事件
+* 父：$scope.$bradcast('eventName'); 子：$scope.$on('eventName',function(){});//子作用域响应父作用域事件
+* 父：$scope.$on('eventName',function(){}); 子：$scope.$emit('eventName');  //父作用域响应子作用域事件
+
 
 
 

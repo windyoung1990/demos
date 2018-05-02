@@ -1,0 +1,20 @@
+<html ng-app="demo">
+    <head>
+        <meta charset="utf-8" />
+        <title>ngCloak</title>
+    </head>
+    <body>
+        <div ng-controller="ExampleCtrl">
+            <!-- 数据渲染完成之后显示 -->
+            <div id="template1" ng-cloak>{{'hello'}}</div>
+            <div id="template2" class="ng-cloak">{{'world'}}</div>
+        </div>
+        <script src="../angular.js"></script>
+        <script>
+            angular.module('demo', [])
+            .controller('ExampleCtrl', function($scope) {
+
+            });
+        </script>
+    </body>
+</html>
